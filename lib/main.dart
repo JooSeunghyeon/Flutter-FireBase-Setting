@@ -1,4 +1,5 @@
 import 'package:firebase/firebase_options.dart';
+import 'package:firebase/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyFirebaseApp());
+  runApp(MaterialApp(home: MyFirebaseApp(),));
 }
 
 class MyFirebaseApp extends StatelessWidget {
@@ -16,14 +17,7 @@ class MyFirebaseApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'FireBase',
-      home: Scaffold(
-        body: Center(
-          child: Text('빌드 성공'),
-        ),
-      ),
-    );
+    return LoginScreen();
   }
 }
 
